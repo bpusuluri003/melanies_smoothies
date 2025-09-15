@@ -10,9 +10,6 @@ st.write(
   """
 )
 #import streamlit as st
-cnx = st.connection("snowflake", type="snowflake")
-session = cnx.session()
-
 
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('Name on your smoothie will be:', name_on_order)
@@ -24,7 +21,7 @@ st.write('Name on your smoothie will be:', name_on_order)
 
 #st.write("Your favourite fruit is:", option)
 
-#--session = get_active_session()
+session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 
 #st.dataframe(data=my_dataframe, use_container_width=True)
