@@ -11,7 +11,7 @@ st.write(
 )
 #import streamlit as st
 
-cnx = st.connection("snowflake")
+cnx = st.connection("snowflake", type="snowflake")
 session = cnx.session()
 #--name_on_order = st.text_input('Name on Smoothie:')
 #--st.write('Name on your smoothie will be:', name_on_order)
